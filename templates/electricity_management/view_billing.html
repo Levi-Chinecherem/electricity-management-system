@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}View Billing - EMS{% endblock %}
+
+{% block content %}
+  <h2>View Billing</h2>
+  {% if billings %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Billing Date</th>
+          <th scope="col">Total Units</th>
+          <th scope="col">Total Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for billing in billings %}
+          <tr>
+            <td>{{ billing.billing_date }}</td>
+            <td>{{ billing.total_units }}</td>
+            <td>{{ billing.total_amount }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No billing records available.</p>
+  {% endif %}
+{% endblock %}

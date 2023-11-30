@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Control Appliances - EMS{% endblock %}
+
+{% block content %}
+  <h2>Control Appliances</h2>
+  {% if appliances %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Appliance Name</th>
+          <th scope="col">Is Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for appliance in appliances %}
+          <tr>
+            <td>{{ appliance.appliance_name }}</td>
+            <td>{{ appliance.is_active }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No power control records available.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- home/templates/home/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Welcome to the Electricity Management System</h2>
+        <p class="lead">
+          This system provides expert electricity metering, billing, and control features. Explore the various functionalities using the navigation menu.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Consumption History</h5>
+            <p class="card-text">View your electricity consumption history and demand requests.</p>
+            <a href="{% url 'electricity_management:view_consumption' %}" class="btn btn-primary">View History</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards for other features as needed -->
+    </div>
+  </div>
+{% endblock %}

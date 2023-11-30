@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}View Consumption - EMS{% endblock %}
+
+{% block content %}
+  <h2>View Consumption</h2>
+  {% if consumptions %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Consumed Units</th>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Demand Request</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for consumption in consumptions %}
+          <tr>
+            <td>{{ consumption.consumed_units }}</td>
+            <td>{{ consumption.timestamp }}</td>
+            <td>{{ consumption.demand_request }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No consumption records available.</p>
+  {% endif %}
+{% endblock %}
